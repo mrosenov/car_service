@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+//Clients Actions
+Route::get('clients/add', function () {
+    return view('client/add_client');
 });
