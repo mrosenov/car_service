@@ -4,7 +4,7 @@
     @include('header.head')
 </head>
 <body>
-
+    @include('alerts')
     @include('header.menu')
     <header>
         @include('header.header')

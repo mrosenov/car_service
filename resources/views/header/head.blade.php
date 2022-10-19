@@ -6,4 +6,6 @@
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/sharp-solid.css">
 
+<script src="{{asset('js/jquery-3.6.1.min.js')}}"></script>
+<script src="{{asset('js/toastr/toastr.min.js')}}"></script>
 <title>{{config('app.name')}}</title>

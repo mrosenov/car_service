@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-//Clients Actions
-Route::get('clients/add', function () {
-    return view('client/add_client');
-});
+//Clients
+Route::get('clients', [ClientInfoController::class, 'list_of_clients']);
+Route::get('clients/add', [ClientInfoController::class, 'add_client_view']);
+Route::post('add_client', [ClientInfoController::class, 'store']);
