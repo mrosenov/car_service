@@ -19,6 +19,18 @@
                         <li><a class="dropdown-item" href="/clients">{{__('lang.list_of_clients')}}</a></li>
                     </ul>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{__('lang.navbar_carmakelist')}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/makes_add">{{__('lang.add_car_make')}}</a></li>
+                        <li><a class="dropdown-item" href="/makes">{{__('lang.car_makes_list')}}</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/models/add">{{__('lang.add_car_model')}}</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

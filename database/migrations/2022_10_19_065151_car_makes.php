@@ -6,20 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+
     public function up()
     {
-        Schema::create('client_info', function (Blueprint $table) {
+        Schema::create('car_makes', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
             $table->integerIncrements('id');;
-            $table->string('name', 40);
-            $table->string('phone',11);
+            $table->string('name', 25);
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('client_info');
+        Schema::dropIfExists('car_makes');
     }
 };

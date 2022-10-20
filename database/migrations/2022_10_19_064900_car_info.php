@@ -6,9 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+
     public function up()
     {
-        Schema::create('client_info', function (Blueprint $table) {
+        Schema::create('car_info', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
             $table->integerIncrements('id');;
@@ -20,6 +21,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('client_info');
+        Schema::dropIfExists('car_info');
     }
 };
