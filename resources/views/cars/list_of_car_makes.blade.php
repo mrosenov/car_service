@@ -20,8 +20,6 @@
                         <th scope="row">{{$car_make->id}}</th>
                         <td>{{$car_make->name}}</td>
                         <td>{{$car_make->logo}}</td>
-
-                        <td>@foreach($car_make->models as $model){{$model->name}}@endforeach</td>
                         <td>
                             <a href="#" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
                             <a href="/makes/{{$car_make->id}}" class="btn btn-light"><i class="fa-duotone fa-cars"></i></a>

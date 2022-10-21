@@ -13,6 +13,20 @@ class CarMakesController extends Controller
         return view('cars/add_car_make');
     }
 
+    public function list_of_car_makes(CarMakesModel $car_makes) {
+        $makes = $car_makes::all();
+        return view('cars/list_of_car_makes',[
+            'car_makes' => $makes,
+        ]);
+    }
+
+    public function list_of_car_models(CarMakesModel $car_makes) {
+        $models = $car_makes->models;
+        return view('cars/list_of_car_models',[
+            'car_models' => $models,
+        ]);
+    }
+
     public function store(Request $request) {
         $this->validate($request,[
             'make' => 'required',

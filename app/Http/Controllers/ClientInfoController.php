@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CarInfoModel;
 use App\Models\ClientInfoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,12 +11,6 @@ class ClientInfoController extends Controller
 {
     public function list_of_clients(ClientInfoModel $clients) {
         return view('client/list_of_clients',[
-            "clients" => $clients::all()
-        ]);
-    }
-
-    public function list_of_clients_cars(ClientInfoModel $clients) {
-        return view('client/list_of_client_cars',[
             "clients" => $clients::all()
         ]);
     }

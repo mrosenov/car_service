@@ -15,6 +15,7 @@ return [
     'car_make_name' => 'Име на производителя',
     'car_make_logo' => 'Лого',
     'car_makes_list' => 'Списък с производители',
+    'car_make' => 'Производител',
     'car_model' => 'Модел',
     'car_model_list' => 'Списък с модели',
     'add_car_model' => 'Добави модел',

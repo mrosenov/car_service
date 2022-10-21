@@ -14,7 +14,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($car_makes as $model)
+                @foreach($car_models as $model)
                     <tr>
                         <th scope="row">{{$model->id}}</th>
                         <td>{{$model->name}}</td>
