@@ -5,7 +5,7 @@
     <div class="card-header">{{__('lang.add_client')}}</div>
     <div class="card-body text-secondary">
         <p class="card-text">
-            <form method="POST" action="{{url('add_client')}}">
+            <form method="POST" action="{{route('add_client_form')}}">
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-input-text"></i></span>

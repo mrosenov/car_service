@@ -19,7 +19,7 @@
                         <th scope="row">{{$model->id}}</th>
                         <td>{{$model->name}}</td>
                         <td>
-                            <a href="#" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
+                            <a href="{{route('car_model_info',$model->id)}}" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
                         </td>
                     </tr>
                 @endforeach

@@ -15,8 +15,8 @@
                         {{__('lang.navbar_clients')}}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/clients/add">{{__('lang.add_client')}}</a></li>
-                        <li><a class="dropdown-item" href="/clients">{{__('lang.list_of_clients')}}</a></li>
+                        <li><a class="dropdown-item" href="{{route('client_add')}}">{{__('lang.add_client')}}</a></li>
+                        <li><a class="dropdown-item" href="{{route('clients')}}">{{__('lang.list_of_clients')}}</a></li>
                     </ul>
                 </li>
 
@@ -25,10 +25,10 @@
                         {{__('lang.navbar_carmakelist')}}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/makes_add">{{__('lang.add_car_make')}}</a></li>
-                        <li><a class="dropdown-item" href="/makes">{{__('lang.car_makes_list')}}</a></li>
+                        <li><a class="dropdown-item" href="{{route('car_makes_add')}}">{{__('lang.add_car_make')}}</a></li>
+                        <li><a class="dropdown-item" href="{{route('car_makes_list')}}">{{__('lang.car_makes_list')}}</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/models/add">{{__('lang.add_car_model')}}</a></li>
+                        <li><a class="dropdown-item" href="{{route('car_model_add')}}">{{__('lang.add_car_model')}}</a></li>
                     </ul>
                 </li>
             </ul>

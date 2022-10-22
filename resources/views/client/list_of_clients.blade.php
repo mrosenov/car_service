@@ -21,9 +21,9 @@
                         <td>{{$client->name}}</td>
                         <td>{{$client->phone}}</td>
                         <td>
-                            <a href="#" class="btn btn-light"><i class="fa-duotone fa-user-pen"></i></a>
-                            <a href="/clients/{{$client->id}}/cars" class="btn btn-light"><i class="fa-duotone fa-cars"></i></a>
-                            <a href="#" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>
+                            <a href="{{route('profile',$client->id)}}" class="btn btn-light"><i class="fa-duotone fa-user-pen"></i></a>
+                            <a href="{{route('client_cars',$client->id)}}" class="btn btn-light"><i class="fa-duotone fa-car-garage"></i></a>
+                            <a href="{{route('delete_client',$client->id)}}" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach

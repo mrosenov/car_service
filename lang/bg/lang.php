@@ -20,4 +20,7 @@ return [
     'car_model_list' => 'Списък с модели',
     'add_car_model' => 'Добави модел',
     'select_field' => 'Избери',
+    'edit_client' => 'Редактирай клиент',
+    'edit_car_make' => 'Редактирай производител',
+    'edit_car_model' => 'Редактирай модел',
 ];

@@ -5,7 +5,7 @@
         <div class="card-header">{{__('lang.add_car_make')}}</div>
         <div class="card-body text-secondary">
             <p class="card-text">
-            <form method="POST" action="{{url('add_make')}}">
+            <form method="POST" action="{{route('add_car_make_form')}}">
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-car-building"></i></span>
