@@ -12,4 +12,7 @@ class ClientInfoModel extends Model
     protected $fillable = ['name','phone'];
     public $table = "client_info";
 
+    public function cars() {
+        return $this->belongsTo(CarInfoModel::class,'id', 'ownerID');
+    }
 }

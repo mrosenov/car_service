@@ -9,11 +9,13 @@
             <table class="table table-bordered table-striped table-hover" style="text-align: center; vertical-align: middle">
                 <thead>
                 <tr>
-                    <th colspan="3">{{$client->name}}</th>
+                    <th colspan="5">{{$client->name}}</th>
                 </tr>
                 <tr>
                     <th scope="col">{{__('lang.car_make')}}</th>
                     <th scope="col">{{__('lang.car_model')}}</th>
+                    <th scope="col">{{__('lang.reg_plat_text')}}</th>
+                    <th scope="col">{{__('lang.vin_text')}}</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
@@ -22,6 +24,8 @@
                         <tr>
                             <td>{{$car->make['name']}}</td>
                             <td>{{$car->model['name']}}</td>
+                            <td>{{$car->reg_plate}}</td>
+                            <td>{{$car->vin}}</td>
                             <td>
                                 <a href="#" class="btn btn-primary">s</a>
                             </td>

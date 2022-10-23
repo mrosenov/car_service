@@ -23,4 +23,10 @@ return [
     'edit_client' => 'Редактирай клиент',
     'edit_car_make' => 'Редактирай производител',
     'edit_car_model' => 'Редактирай модел',
+    'add_car_to_client' => 'Добави автомобил',
+    'save' => 'Запази',
+    'reg_plate' => 'CT0880BA',
+    'car_vin' => 'WBAAW51080JU11409',
+    'reg_plat_text' => 'Регистрационен номер',
+    'vin_text' => 'VIN',
 ];

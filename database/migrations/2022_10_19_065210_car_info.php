@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedInteger ('ownerID')->unsigned()->index();
             $table->unsignedInteger ('car_make')->unsigned()->index();
             $table->unsignedInteger ('car_model')->unsigned()->index();
+            $table->text('reg_plate');
+            $table->text('vin');
             $table->timestamps();
 
             $table->foreign('ownerID')->references('id')->on('client_info')->onDelete('cascade');

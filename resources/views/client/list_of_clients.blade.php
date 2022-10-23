@@ -22,7 +22,9 @@
                         <td>{{$client->phone}}</td>
                         <td>
                             <a href="{{route('profile',$client->id)}}" class="btn btn-light"><i class="fa-duotone fa-user-pen"></i></a>
-                            <a href="{{route('client_cars',$client->id)}}" class="btn btn-light"><i class="fa-duotone fa-car-garage"></i></a>
+                            @if($client->cars)
+                                <a href="{{route('client_cars',$client->id)}}" class="btn btn-light"><i class="fa-duotone fa-car-garage"></i></a>
+                            @endif
                             <a href="{{route('delete_client',$client->id)}}" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>
                         </td>
                     </tr>

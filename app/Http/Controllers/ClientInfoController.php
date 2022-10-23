@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\CarInfoModel;
+use App\Models\CarMakesModel;
+use App\Models\CarModelsModel;
 use App\Models\ClientInfoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,16 +14,23 @@ class ClientInfoController extends Controller
 {
     public function list_of_clients(ClientInfoModel $clients,CarInfoModel $car_info) {
 
+        foreach ($clients as $client) {
+            $client_cars = $car_info->where('ownerID',2)->get();
+        }
+
         return view('client/list_of_clients',[
-            "clients" => $clients::all(),
+            'clients' => $clients::all(),
+            'client_cars' => $client_cars,
         ]);
     }
 
-    public function client_info_view(ClientInfoModel $client) {
+    public function client_info_view(ClientInfoModel $client,CarMakesModel $car_makes,CarModelsModel $car_models) {
         $client_info = $client->where('id',$client->id)->get()->first();
 
         return view('client/client_info',[
-            "client_info" => $client_info,
+            'client_info' => $client_info,
+            'car_makes' => $car_makes::all(),
+            'car_models' => $car_models::all(),
         ]);
     }
 
@@ -47,6 +56,29 @@ class ClientInfoController extends Controller
         $client->phone = $request->phone;
         $client->save();
         return redirect('clients/add')->with('success', $client->name.' е добавен като клиент.');
+    }
+
+    public function add_client_car(Request $request,ClientInfoModel $client) {
+        $this->validate($request,[
+            'make' => 'required',
+            'model' => 'required',
+            'regplate' => 'required|min:8|max:8',
+            'vin' => 'required|min:17|max:18',
+        ]);
+
+        $client_car = new CarInfoModel();
+
+        if (DB::table('car_info')->where('reg_plate', $request->regplate)->orWhere('vin', $request->vin)->exists()) {
+            return redirect::back()->with('error','Съществува автомобил с такъв рег.номер или VIN');
+        }
+
+        $client_car->ownerID = $client->id;
+        $client_car->car_make = $request->make;
+        $client_car->car_model = $request->model;
+        $client_car->reg_plate = $request->regplate;
+        $client_car->vin = $request->vin;
+        $client_car->save();
+        return redirect::back()->with('success', 'Успешно добавихте кола към клиента');
     }
 
     public function update(Request $request,ClientInfoModel $client) {

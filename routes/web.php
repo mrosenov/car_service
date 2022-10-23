@@ -34,6 +34,7 @@ Route::get('clients/add', [ClientInfoController::class, 'add_client_view'])->nam
 Route::get('client/{carinfo:ownerID}/cars', [CarInfoController::class, 'list_client_cars'])->name('client_cars');
 //Methods
 Route::post('add_client', [ClientInfoController::class, 'store'])->name('add_client_form');
+Route::post('client/{client:id}/profile', [ClientInfoController::class, 'add_client_car'])->name('add_client_car_form');
 Route::patch('client/{client:id}/profile', [ClientInfoController::class, 'update'])->name('update_client_form');
 Route::get('clients/{client:id}/delete', [ClientInfoController::class, 'destroy'])->name('delete_client');
 
