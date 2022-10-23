@@ -80,13 +80,6 @@
                         </form>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="2">
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-success">{{__('lang.save')}}</button>
-                        </div>
-                    </td>
-                </tr>
                 </tbody>
             </table>
             </p>

@@ -31,6 +31,18 @@
                         <li><a class="dropdown-item" href="{{route('car_model_add')}}">{{__('lang.add_car_model')}}</a></li>
                     </ul>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{__('lang.navbar_services')}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{route('service_type_add')}}">{{__('lang.navbar_add_service_category')}}</a></li>
+                        <li><a class="dropdown-item" href="{{route('service_subtype_add')}}">{{__('lang.navbar_add_sub_service')}}</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{route('list_of_services')}}">{{__('lang.navbar_services_list')}}</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

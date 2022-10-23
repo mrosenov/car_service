@@ -9,6 +9,8 @@ use App\Http\Controllers\ClientInfoController;
 use \App\Http\Controllers\CarMakesController;
 use \App\Http\Controllers\CarModelsController;
 use \App\Http\Controllers\CarInfoController;
+use \App\Http\Controllers\ServiceTypeController;
+use \App\Http\Controllers\ServiceSubTypeController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +40,7 @@ Route::post('client/{client:id}/profile', [ClientInfoController::class, 'add_cli
 Route::patch('client/{client:id}/profile', [ClientInfoController::class, 'update'])->name('update_client_form');
 Route::get('clients/{client:id}/delete', [ClientInfoController::class, 'destroy'])->name('delete_client');
 
-//Car Makes
+//Car_Makes
 Route::get('makes', [CarMakesController::class, 'list_of_car_makes'])->name('car_makes_list');
 Route::get('makes/{car_makes:id}', [CarMakesController::class, 'list_of_car_models'])->name('car_make_models');
 Route::get('makes/{car_makes:id}/edit', [CarMakesController::class, 'car_make_info_view'])->name('car_make_info');
@@ -47,11 +49,20 @@ Route::get('makes_add', [CarMakesController::class, 'add_car_make_view'])->name(
 Route::post('add_make', [CarMakesController::class, 'store'])->name('add_car_make_form');
 Route::patch('makes/{car_makes:id}/edit',[CarMakesController::class,'update'])->name('update_car_make_form');
 
-//Car Model
+//Car_Model
 Route::get('models/add', [CarModelsController::class, 'add_car_model_view'])->name('car_model_add');
 Route::get('models/{car_models:id}/edit', [CarModelsController::class, 'car_model_info_view'])->name('car_model_info');
 //Methods
 Route::post('models/add', [CarModelsController::class, 'store'])->name('car_models_add_form');
 Route::patch('models/{car_models:id}/edit', [CarModelsController::class, 'update'])->name('update_car_model_form');
 
+//Service_Types
+Route::get('services', [ServiceTypeController::class, 'list_service_type_view'])->name('list_of_services');
+Route::get('services/{service_type:id}', [ServiceSubTypeController::class, 'list_service_subtypes_view'])->name('list_of_service_subtypes');
+Route::get('service/type/add', [ServiceTypeController::class, 'service_type_view'])->name('service_type_add');
+Route::get('service/subtype/add', [ServiceSubTypeController::class, 'service_subtype_view'])->name('service_subtype_add');
+
+//Methods
+Route::post('service_type/add', [ServiceTypeController::class, 'store'])->name('service_type_add_form');
+Route::post('service/subtype/add', [ServiceSubTypeController::class, 'store'])->name('service_subtype_add_form');
 

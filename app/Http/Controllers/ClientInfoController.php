@@ -12,15 +12,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class ClientInfoController extends Controller
 {
-    public function list_of_clients(ClientInfoModel $clients,CarInfoModel $car_info) {
-
-        foreach ($clients as $client) {
-            $client_cars = $car_info->where('ownerID',2)->get();
-        }
+    public function list_of_clients(ClientInfoModel $clients) {
 
         return view('client/list_of_clients',[
             'clients' => $clients::all(),
-            'client_cars' => $client_cars,
         ]);
     }
 

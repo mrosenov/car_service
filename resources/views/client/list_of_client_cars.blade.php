@@ -27,7 +27,8 @@
                             <td>{{$car->reg_plate}}</td>
                             <td>{{$car->vin}}</td>
                             <td>
-                                <a href="#" class="btn btn-primary">s</a>
+                                <a href="#" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
+                                <a href="#" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach
