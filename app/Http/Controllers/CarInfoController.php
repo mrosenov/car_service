@@ -37,7 +37,7 @@ class CarInfoController extends Controller
         ]);
     }
 
-    public function update($id,Request $request, ClientInfoModel $client) {
+    public function update($id,Request $request) {
         $this->validate($request,[
             'newowner' => 'required',
             'make' => 'required',
@@ -85,5 +85,11 @@ class CarInfoController extends Controller
         }
         $carInfo->update();
         return redirect::back()->with('success','Автомобилът e редактиран.');
+    }
+
+    public function destroy(CarInfoModel $carinfo) {
+        $car = CarInfoModel::find($carinfo->id);
+        $car->delete();
+        return redirect::back()->with('success', 'Автомобилът с номер '.$car->reg_plate.' e изтрит.');
     }
 }

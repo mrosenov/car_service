@@ -41,6 +41,7 @@ Route::post('client/{client:id}/profile', [ClientInfoController::class, 'add_cli
 Route::patch('client/{client:id}/profile', [ClientInfoController::class, 'update'])->name('update_client_form');
 Route::get('clients/{client:id}/delete', [ClientInfoController::class, 'destroy'])->name('delete_client');
 Route::patch('cars/{carinfo:id}/edit', [CarInfoController::class, 'update'])->name('update_client_car_form');
+Route::get('cars/{carinfo:id}/delete', [CarInfoController::class, 'destroy'])->name('delete_client_car');
 
 //Car_Makes
 Route::get('makes', [CarMakesController::class, 'list_of_car_makes'])->name('car_makes_list');
