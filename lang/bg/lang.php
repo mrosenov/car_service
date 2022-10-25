@@ -24,6 +24,7 @@ return [
     'edit_car_make' => 'Редактирай производител',
     'edit_car_model' => 'Редактирай модел',
     'add_car_to_client' => 'Добави автомобил',
+    'edit_car_of_client' => 'Редактирай автомобил',
     'save' => 'Запази',
     'reg_plate' => 'CT0880BA',
     'car_vin' => 'WBAAW51080JU11409',
@@ -39,4 +40,6 @@ return [
     'sub_service_name' => 'Смяна на свещи',
     'sub_service_price' => 'Цена',
     'service_list_category' => 'Категории',
+    'change_car_owner' => 'Смени собственика',
+    'current_car_owner' => 'Собственик',
 ];

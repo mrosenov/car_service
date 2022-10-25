@@ -34,11 +34,13 @@ Route::get('clients', [ClientInfoController::class, 'list_of_clients'])->name('c
 Route::get('client/{client:id}/profile', [ClientInfoController::class, 'client_info_view'])->name('profile');
 Route::get('clients/add', [ClientInfoController::class, 'add_client_view'])->name('client_add');
 Route::get('client/{carinfo:ownerID}/cars', [CarInfoController::class, 'list_client_cars'])->name('client_cars');
+Route::get('cars/{carinfo:id}/edit', [CarInfoController::class, 'edit_client_car_view'])->name('edit_client_car');
 //Methods
 Route::post('add_client', [ClientInfoController::class, 'store'])->name('add_client_form');
 Route::post('client/{client:id}/profile', [ClientInfoController::class, 'add_client_car'])->name('add_client_car_form');
 Route::patch('client/{client:id}/profile', [ClientInfoController::class, 'update'])->name('update_client_form');
 Route::get('clients/{client:id}/delete', [ClientInfoController::class, 'destroy'])->name('delete_client');
+Route::patch('cars/{carinfo:id}/edit', [CarInfoController::class, 'update'])->name('update_client_car_form');
 
 //Car_Makes
 Route::get('makes', [CarMakesController::class, 'list_of_car_makes'])->name('car_makes_list');
