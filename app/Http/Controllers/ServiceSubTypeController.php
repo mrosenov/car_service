@@ -24,16 +24,26 @@ class ServiceSubTypeController extends Controller
         ]);
     }
 
+    public function edit_service_subtype_view($id, ServiceSubTypeModel $service_subtypes) {
+
+        $service_subtype = $service_subtypes->where('id', $id)->get()->first();
+
+        return view('service/edit_service_subtype',[
+            'service_subtype' => $service_subtype,
+        ]);
+    }
+
     public function store(Request $request) {
         $this->validate($request,[
             'servicetype' => 'required',
             'name' => 'required',
+            'price' => 'required',
         ]);
 
         $service_subtype = new ServiceSubTypeModel();
 
         if (DB::table('service_subtype')->where('name',$request->name)->where('service_type',$request->servicetype)->exists()) {
-            return redirect::back()->with('error','Услугата '.$service_subtype->name.' с категория'.$service_subtype->service_type.' вече съществува.');
+            return redirect::back()->with('error','Услугата '.$service_subtype->name.' вече съществува в тази категория.');
         }
 
         $service_subtype->name = $request->name;
@@ -41,6 +51,31 @@ class ServiceSubTypeController extends Controller
         $service_subtype->price = $request->price;
         $service_subtype->save();
 
-        return redirect::back()->with('success', 'Услугата '.$service_subtype->name.' с категория '.$service_subtype->service_type.' е успешно добавена.');
+        return redirect::back()->with('success', 'Услугата '.$service_subtype->name.' е успешно добавена.');
+    }
+
+    public function update($id, Request $request) {
+        $this->validate($request,[
+           'name' => 'required',
+           'price' => 'required'
+        ]);
+
+        $service_subtype = ServiceSubTypeModel::find($id);
+
+        if (DB::table('service_subtype')->where('name',$request->name)->where('service_type',$request->servicetype)->exists()) {
+            return redirect::back()->with('error','Услугата '.$service_subtype->name.' с категория'.$service_subtype->service_type.' вече съществува.');
+        }
+
+        $service_subtype->name = $request->name;
+        $service_subtype->price = $request->price;
+        $service_subtype->update();
+
+        return redirect::back()->with('success', $service_subtype->name.' e редактиран успешно.');
+    }
+
+    public function destroy($id) {
+        $service_subtype = ServiceSubTypeModel::find($id);
+        $service_subtype->delete();
+        return redirect::back()->with('success', $service_subtype->name.' е успешно изтрита');
     }
 }

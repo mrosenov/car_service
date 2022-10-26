@@ -5,42 +5,42 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">{{__('lang.navbar_home')}}</a>
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="/">{{__('lang.navbar_home')}}</a>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle {{Route::currentRouteNamed(['clients','client_add']) ?  'active' : ''}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{__('lang.navbar_clients')}}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{route('client_add')}}">{{__('lang.add_client')}}</a></li>
-                        <li><a class="dropdown-item" href="{{route('clients')}}">{{__('lang.list_of_clients')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['client_add']) ?  'active' : ''}}" href="{{route('client_add')}}">{{__('lang.add_client')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['clients']) ?  'active' : ''}}" href="{{route('clients')}}">{{__('lang.list_of_clients')}}</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle {{Route::currentRouteNamed(['car_makes_add','car_makes_list','car_model_add']) ?  'active' : ''}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{__('lang.navbar_carmakelist')}}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{route('car_makes_add')}}">{{__('lang.add_car_make')}}</a></li>
-                        <li><a class="dropdown-item" href="{{route('car_makes_list')}}">{{__('lang.car_makes_list')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['car_makes_add']) ?  'active' : ''}}" href="{{route('car_makes_add')}}">{{__('lang.add_car_make')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['car_makes_list']) ?  'active' : ''}}" href="{{route('car_makes_list')}}">{{__('lang.car_makes_list')}}</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{route('car_model_add')}}">{{__('lang.add_car_model')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['car_model_add']) ?  'active' : ''}}" href="{{route('car_model_add')}}">{{__('lang.add_car_model')}}</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle {{Route::currentRouteNamed(['service_type_add','service_subtype_add','list_of_services','list_of_service_subtypes','service_type_edit','service_subtype_edit']) ?  'active' : ''}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{__('lang.navbar_services')}}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{route('service_type_add')}}">{{__('lang.navbar_add_service_category')}}</a></li>
-                        <li><a class="dropdown-item" href="{{route('service_subtype_add')}}">{{__('lang.navbar_add_sub_service')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['service_type_add']) ?  'active' : ''}}" href="{{route('service_type_add')}}">{{__('lang.navbar_add_service_category')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['service_subtype_add']) ?  'active' : ''}}" href="{{route('service_subtype_add')}}">{{__('lang.navbar_add_sub_service')}}</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{route('list_of_services')}}">{{__('lang.navbar_services_list')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['list_of_services']) ?  'active' : ''}}" href="{{route('list_of_services')}}">{{__('lang.navbar_services_list')}}</a></li>
                     </ul>
                 </li>
             </ul>

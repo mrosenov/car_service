@@ -63,9 +63,14 @@ Route::patch('models/{car_models:id}/edit', [CarModelsController::class, 'update
 Route::get('services', [ServiceTypeController::class, 'list_service_type_view'])->name('list_of_services');
 Route::get('services/{service_type:id}', [ServiceSubTypeController::class, 'list_service_subtypes_view'])->name('list_of_service_subtypes');
 Route::get('service/type/add', [ServiceTypeController::class, 'service_type_view'])->name('service_type_add');
+Route::get('service/type/{type:id}/edit', [ServiceTypeController::class, 'edit_service_type_view'])->name('service_type_edit');
 Route::get('service/subtype/add', [ServiceSubTypeController::class, 'service_subtype_view'])->name('service_subtype_add');
-
+Route::get('service/subtype/{subtype:id}/edit', [ServiceSubTypeController::class, 'edit_service_subtype_view'])->name('service_subtype_edit');
 //Methods
 Route::post('service_type/add', [ServiceTypeController::class, 'store'])->name('service_type_add_form');
 Route::post('service/subtype/add', [ServiceSubTypeController::class, 'store'])->name('service_subtype_add_form');
+Route::patch('service/type/{type:id}/edit', [ServiceTypeController::class, 'update'])->name('service_type_edit_form');
+Route::get('service/type/{type:id}/delete', [ServiceTypeController::class, 'destroy'])->name('service_type_delete');
+Route::patch('service/subtype/{subtype:id}/edit', [ServiceSubTypeController::class, 'update'])->name('service_subtype_edit_form');
+Route::get('service/subtype/{subtype:id}/delete', [ServiceSubTypeController::class, 'destroy'])->name('service_subtype_delete');
 
