@@ -40,6 +40,8 @@ return [
     'sub_service_name' => 'Смяна на свещи',
     'sub_service_price' => 'Цена',
     'service_list_category' => 'Категории',
+    'service' => 'Услуга',
     'change_car_owner' => 'Смени собственика',
     'current_car_owner' => 'Собственик',
+    'services_list' => 'Списък с услуги',
 ];

@@ -2,14 +2,14 @@
 
 @section('section')
     <div class="card border-secondary mb-3">
-        <div class="card-header">{{__('lang.list_of_clients_cars')}}</div>
+        <div class="card-header">{{__('lang.services_list')}}</div>
         <div class="card-body text-secondary">
             <p class="card-text">
             <table class="table table-bordered table-striped table-hover" style="text-align: center; vertical-align: middle">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">{{__('lang.service_list_category')}}</th>
+                    <th scope="col">{{__('lang.service')}}</th>
                     <th scope="col">{{__('lang.sub_service_price')}}</th>
                     <th scope="col"></th>
                 </tr>
