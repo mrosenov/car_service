@@ -11,6 +11,8 @@ use \App\Http\Controllers\CarModelsController;
 use \App\Http\Controllers\CarInfoController;
 use \App\Http\Controllers\ServiceTypeController;
 use \App\Http\Controllers\ServiceSubTypeController;
+use \App\Http\Controllers\RepairInfoController;
+use \App\Http\Controllers\WorkerInfoController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -74,3 +76,15 @@ Route::get('service/type/{type:id}/delete', [ServiceTypeController::class, 'dest
 Route::patch('service/subtype/{subtype:id}/edit', [ServiceSubTypeController::class, 'update'])->name('service_subtype_edit_form');
 Route::get('service/subtype/{subtype:id}/delete', [ServiceSubTypeController::class, 'destroy'])->name('service_subtype_delete');
 
+//Repairs
+Route::get('repairs', [RepairInfoController::class, 'list_repairs_view'])->name('list_of_repairs');
+
+
+//Workers
+Route::get('workers', [WorkerInfoController::class, 'list_workers_view'])->name('list_of_workers');
+Route::get('workers/add', [WorkerInfoController::class, 'add_worker_view'])->name('add_worker');
+Route::get('worker/{worker:id}/edit', [WorkerInfoController::class, 'edit_worker_view'])->name('edit_worker');
+//Methods
+Route::post('workers/add', [WorkerInfoController::class, 'store'])->name('add_worker_form');
+Route::patch('worker/{worker:id}/edit', [WorkerInfoController::class, 'update'])->name('edit_worker_form');
+Route::get('worker/{worker:id}/delete', [WorkerInfoController::class, 'destroy'])->name('delete_worker');
