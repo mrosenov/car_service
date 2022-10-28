@@ -11,7 +11,7 @@ class CarMakesModel extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
-    public $table = "car_makes";
+    protected $table = "car_makes";
 
     public function models() {
         return $this->hasMany(CarModelsModel::class, 'car_make');

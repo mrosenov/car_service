@@ -10,5 +10,5 @@ class WorkerInfoModel extends Model
     use HasFactory;
 
     protected $fillable = ['name','phone'];
-    public $table = "worker_info";
+    protected $table = "worker_info";
 }

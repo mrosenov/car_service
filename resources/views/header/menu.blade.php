@@ -61,10 +61,9 @@
                         {{__('lang.navbar_repairs')}}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item {{Route::currentRouteNamed(['service_type_add']) ?  'active' : ''}}" href="{{route('service_type_add')}}">{{__('lang.navbar_add_service_category')}}</a></li>
-                        <li><a class="dropdown-item {{Route::currentRouteNamed(['service_subtype_add']) ?  'active' : ''}}" href="{{route('service_subtype_add')}}">{{__('lang.navbar_add_sub_service')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['add_repair']) ?  'active' : ''}}" href="{{route('add_repair')}}">{{__('lang.navbar_add_repair')}}</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item {{Route::currentRouteNamed(['list_of_services']) ?  'active' : ''}}" href="{{route('list_of_repairs')}}">{{__('lang.navbar_list_of_repairs')}}</a></li>
+                        <li><a class="dropdown-item {{Route::currentRouteNamed(['list_of_repairs']) ?  'active' : ''}}" href="{{route('list_of_repairs')}}">{{__('lang.navbar_list_of_repairs')}}</a></li>
                     </ul>
                 </li>
             </ul>

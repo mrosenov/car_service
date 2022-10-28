@@ -10,7 +10,7 @@ class ServiceSubTypeModel extends Model
     use HasFactory;
 
     protected $fillable = ['name','service_type','price'];
-    public $table = "service_subtype";
+    protected $table = "service_subtype";
 
     public function service_type_info() {
         return $this->belongsTo(ServiceTypeModel::class,'service_type', 'id');

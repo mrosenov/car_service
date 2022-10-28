@@ -10,7 +10,7 @@ class CarInfoModel extends Model
     use HasFactory;
 
     protected $fillable = ['ownerID','car_make','car_model'];
-    public $table = "car_info";
+    protected $table = "car_info";
 
     public function client() {
         return $this->belongsTo(ClientInfoModel::class,'ownerID', 'id');

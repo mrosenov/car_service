@@ -37,6 +37,7 @@ Route::get('client/{client:id}/profile', [ClientInfoController::class, 'client_i
 Route::get('clients/add', [ClientInfoController::class, 'add_client_view'])->name('client_add');
 Route::get('client/{carinfo:ownerID}/cars', [CarInfoController::class, 'list_client_cars'])->name('client_cars');
 Route::get('cars/{carinfo:id}/edit', [CarInfoController::class, 'edit_client_car_view'])->name('edit_client_car');
+Route::get('cars/{carinfo:id}/repairs', [CarInfoController::class, 'car_repairs_view'])->name('car_repairs');
 //Methods
 Route::post('add_client', [ClientInfoController::class, 'store'])->name('add_client_form');
 Route::post('client/{client:id}/profile', [ClientInfoController::class, 'add_client_car'])->name('add_client_car_form');
@@ -78,6 +79,9 @@ Route::get('service/subtype/{subtype:id}/delete', [ServiceSubTypeController::cla
 
 //Repairs
 Route::get('repairs', [RepairInfoController::class, 'list_repairs_view'])->name('list_of_repairs');
+Route::get('repair/add', [RepairInfoController::class, 'add_repair_view'])->name('add_repair');
+//Methods
+Route::post('repair/add', [RepairInfoController::class, 'store'])->name('add_repair_form');
 
 
 //Workers

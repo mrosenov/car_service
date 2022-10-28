@@ -6,6 +6,8 @@ use App\Models\CarInfoModel;
 use App\Models\CarMakesModel;
 use App\Models\CarModelsModel;
 use App\Models\ClientInfoModel;
+use App\Models\RepairInfoModel;
+use App\Models\ReplacedPartsInfoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -34,6 +36,14 @@ class CarInfoController extends Controller
             'clients' => $client::all(),
             'car_makes' => $car_makes::all(),
             'car_models' => $car_models::all(),
+        ]);
+    }
+
+    public function car_repairs_view($id,RepairInfoModel $rinfo) {
+        $list_repairs = $rinfo->where('car_info_id', $id)->get();
+
+        return view('repairs/list_of_car_repairs', [
+            'list_repairs' => $list_repairs,
         ]);
     }
 
