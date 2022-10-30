@@ -10,7 +10,6 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">{{__('lang.service')}}</th>
-                    <th scope="col">{{__('lang.sub_service_price')}}</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
@@ -20,8 +19,8 @@
                         <td>{{$service_subtype->id}}</td>
                         <td>{{$service_subtype->name}}</td>
                         <td>
-                            <a href="{{route('service_subtype_edit', $service_subtype->id)}}" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
-                            <a href="{{route('service_subtype_delete',$service_subtype->id)}}" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>
+                            <a href="{{route('service_subtype_edit', $service_subtype->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-pen-to-square"></i></a>
+                            <a href="{{route('service_subtype_delete',$service_subtype->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-trash"></i></a>
                         </td>
                     </tr>
                 @endforeach

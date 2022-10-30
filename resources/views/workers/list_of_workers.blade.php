@@ -21,8 +21,8 @@
                     <td>{{$worker->name}}</td>
                     <td>{{$worker->created_at}}</td>
                     <td>
-                        <a href="{{route('edit_worker', $worker->id)}}" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
-                        <a href="{{route('delete_worker', $worker->id)}}" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>
+                        <a href="{{route('edit_worker', $worker->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-pen-to-square"></i></a>
+                        <a href="{{route('delete_worker', $worker->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-trash"></i></a>
                     </td>
                 </tr>
                 @endforeach

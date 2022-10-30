@@ -20,10 +20,10 @@
                         <td>{{$service_type->name}}</td>
                         <td>
                             @if(count($service_type->service_subtype_info) > 0)
-                            <a href="{{route('list_of_service_subtypes',$service_type->id)}}" class="btn btn-light"><i class="fa-duotone fa-screwdriver-wrench"></i></a>
+                            <a href="{{route('list_of_service_subtypes',$service_type->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-screwdriver-wrench"></i></a>
                             @endif
-                            <a href="{{route('service_type_edit', $service_type->id)}}" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
-                            <a href="{{route('service_type_delete', $service_type->id)}}" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>
+                            <a href="{{route('service_type_edit', $service_type->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-pen-to-square"></i></a>
+                            <a href="{{route('service_type_delete', $service_type->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-trash"></i></a>
                         </td>
                     </tr>
                 @endforeach

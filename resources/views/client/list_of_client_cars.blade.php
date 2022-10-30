@@ -27,9 +27,9 @@
                             <td>{{$car->reg_plate}}</td>
                             <td>{{$car->vin}}</td>
                             <td>
-                                <a href="{{route('edit_client_car',$car->id)}}" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
-                                <a href="{{route('car_repairs',$car->id)}}" class="btn btn-light"><i class="fa-duotone fa-clipboard-list"></i></a>
-                                <a href="{{route('delete_client_car',$car->id)}}" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>
+                                <a href="{{route('edit_client_car',$car->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-pen-to-square"></i></a>
+                                <a href="{{route('car_repairs',$car->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-clipboard-list"></i></a>
+                                <a href="{{route('delete_client_car',$car->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

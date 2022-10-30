@@ -21,8 +21,8 @@
                         <td>{{$car_make->name}}</td>
                         <td>{{$car_make->logo}}</td>
                         <td>
-                            <a href="{{route('car_make_info',$car_make->id)}}" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
-                            <a href="{{route('car_make_models',$car_make->id)}}" class="btn btn-light"><i class="fa-duotone fa-cars"></i></a>
+                            <a href="{{route('car_make_info',$car_make->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-pen-to-square"></i></a>
+                            <a href="{{route('car_make_models',$car_make->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-cars"></i></a>
                         </td>
                     </tr>
                 @endforeach
