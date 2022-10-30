@@ -34,7 +34,7 @@
                 @endforeach
                 <tr>
                     <td colspan="7">
-                        <strong>{{__('lang.repair_price')}} {{$repair_info->totalPrice}} лв</strong>
+                        <strong>{{__('lang.repair_price')}} {{$TotalPrice}} лв</strong>
                     </td>
                 </tr>
                 </tbody>

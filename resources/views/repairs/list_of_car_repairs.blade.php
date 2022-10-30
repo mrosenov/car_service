@@ -26,9 +26,8 @@
                            {{$repair->totalPrice}} ЛВ
                         </td>
                         <td>
-                            <a href="" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-pen-to-square"></i></a>
                             <a href="{{route('view_repair', $repair->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-clipboard-list"></i></a>
-                            <a href="" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-trash"></i></a>
+                            <a href="{{route('car_repair_delete', $repair->id)}}" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-trash"></i></a>
                         </td>
                     </tr>
                 @endforeach

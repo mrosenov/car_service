@@ -35,10 +35,12 @@ class RepairInfoController extends Controller
     public function view_repair($id, RepairInfoModel $rinfo) {
         $repair_info = $rinfo::find($id);
         $replaced_parts = $rinfo::find($id)->ReplacedParts;
+        $price = $this->ReplacedPartsPrice($id);
 
         return view('repairs/view_repair', [
             'repair_info' => $repair_info,
             'replaced_parts' => $replaced_parts,
+            'TotalPrice' => $price,
         ]);
     }
 
@@ -69,10 +71,16 @@ class RepairInfoController extends Controller
                 'labourPrice' => $request->labourprice[$i],
             ]);
         }
-//        $totalPrice = DB::table('replaced_parts_info')->where('repair_info', $rinfo->id)->sum(DB::raw('partPrice + labourPrice'));
+
         $rinfo->totalPrice = $this->ReplacedPartsPrice($rinfo->id);
         $rinfo->update();
         return redirect::back()->with('success', 'Ремонтът е добавен успешно.');
+    }
+
+    public function destroy($id) {
+        $rinfo = RepairInfoModel::find($id);
+        $rinfo->delete();
+        return redirect::back()->with('success', 'Ремонтът бе изтрит.');
     }
 
     public function ReplacedPartsPrice($id) {

@@ -83,6 +83,7 @@ Route::get('repair/add', [RepairInfoController::class, 'add_repair_view'])->name
 Route::get('repair/{repair:id}', [RepairInfoController::class, 'view_repair'])->name('view_repair');
 //Methods
 Route::post('repair/add', [RepairInfoController::class, 'store'])->name('add_repair_form');
+Route::get('repair/{repair:id}/delete', [RepairInfoController::class, 'destroy'])->name('car_repair_delete');
 
 
 //Workers

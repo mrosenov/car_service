@@ -23,4 +23,8 @@ class CarInfoModel extends Model
     public function model() {
         return $this->belongsTo(CarModelsModel::class, 'car_model','id');
     }
+
+    public function AllRepairs() {
+        return $this->hasMany(RepairInfoModel::class, 'car_info_id', 'id');
+    }
 }
