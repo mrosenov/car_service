@@ -8,7 +8,7 @@
             <form method="POST" action="{{route('add_repair_form')}}">
                 @csrf
                 <div class="input-group mb-3">
-                    <select class="form-select select_carInfo @if($errors->any()) is-invalid @endif" name="repairedcar">
+                    <select class="form-select select_carInfo @if($errors->any()) is-invalid @endif" name="repairedcar" required>
                         <option selected disabled>{{__('lang.repaired_car')}}</option>
                         @foreach($car_info as $car)
                             <option value="{{$car->id}}">{{$car->reg_plate}} - {{$car->vin}}</option>
@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="input-group mb-3">
-                    <select class="form-select select_carWorker @if($errors->any()) is-invalid @endif" name="worker">
+                    <select class="form-select select_carWorker @if($errors->any()) is-invalid @endif" name="worker" required>
                         <option selected disabled>{{__('lang.car_worker_text')}}</option>
                         @foreach($workers as $worker)
                             <option value="{{$worker->id}}">{{$worker->name}}</option>
@@ -49,16 +49,16 @@
                     <tbody>
                         <tr>
                             <td>
-                                <input name="partnumber[]" type="text" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.parts_table_number')}}">
+                                <input name="partnumber[]" type="text" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.parts_table_number')}}" required>
                             </td>
                             <td>
-                                <input name="partname[]" type="text" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.parts_table_name')}}">
+                                <input name="partname[]" type="text" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.parts_table_name')}}" required>
                             </td>
                             <td>
-                                <input name="partprice[]" type="number" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.parts_table_part_price')}}" min="0" step="0.1">
+                                <input name="partprice[]" type="number" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.parts_table_part_price')}}" min="0" step="0.01" required>
                             </td>
                             <td>
-                                <select name="servicetype[]" class="form-select @if($errors->any()) is-invalid @endif">
+                                <select name="servicetype[]" class="form-select @if($errors->any()) is-invalid @endif" required>
                                     <option>{{__('lang.parts_table_service_type')}}</option>
                                     @foreach($service_types as $type)
                                         <optgroup label="{{$type->name}}">
@@ -72,7 +72,7 @@
                                 </select>
                             </td>
                             <td>
-                                <input name="labourprice[]" type="number" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.parts_table_labour_price')}}" min="0" step="0.1">
+                                <input name="labourprice[]" type="number" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.parts_table_labour_price')}}" min="0" step="0.01" required>
                             </td>
                             <td style="text-align: center; width: 10%">
                                 <button type="button" class="btn btn-light btn-outline-success" onclick="addRow(this)"><i class="fa-duotone fa-square-plus"></i></button>

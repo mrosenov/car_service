@@ -6,7 +6,6 @@ use App\Models\WorkerInfoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-use function GuzzleHttp\Promise\all;
 
 class WorkerInfoController extends Controller
 {
@@ -33,7 +32,7 @@ class WorkerInfoController extends Controller
     public function store(Request $request) {
         $this->validate($request, [
             'name' => 'required',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:11'
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:10'
         ]);
 
         $worker = new WorkerInfoModel();
@@ -53,7 +52,7 @@ class WorkerInfoController extends Controller
     public function update($id, Request $request) {
         $this->validate($request, [
             'name' => 'required',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:11'
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:10'
         ]);
 
         $worker = WorkerInfoModel::find($id);

@@ -9,7 +9,7 @@
                 @csrf
 
                 <div class="input-group mb-3">
-                    <select class="form-select @if($errors->any()) is-invalid @endif" name="servicetype">
+                    <select class="form-select @if($errors->any()) is-invalid @endif" name="servicetype" required>
                         <option selected disabled>{{__('lang.select_field')}}</option>
                         @foreach($service_types as $service_type)
                             <option value="{{$service_type->id}}">{{$service_type->name}}</option>
@@ -19,12 +19,7 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-screwdriver-wrench"></i></span>
-                    <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.sub_service_name')}}">
-                </div>
-
-                <div class="input-group mb-3">
-                    <span class="input-group-text"><i class="fa-duotone fa-sack-dollar"></i></span>
-                    <input type="number" name="price" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.sub_service_price')}}" min="0" step="0.1">
+                    <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.sub_service_name')}}" required>
                 </div>
 
                 <div class="d-grid gap-2">

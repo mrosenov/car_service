@@ -9,7 +9,7 @@ class ServiceSubTypeModel extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','service_type','price'];
+    protected $fillable = ['name','service_type'];
     protected $table = "service_subtype";
 
     public function service_type_info() {

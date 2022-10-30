@@ -9,7 +9,7 @@
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-car-building"></i></span>
-                    <input type="text" name="make" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.car_make_name')}}">
+                    <input type="text" name="make" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.car_make_name')}}" required>
                 </div>
 
                 <div class="input-group mb-3">

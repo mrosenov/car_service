@@ -19,12 +19,12 @@
                             @method('PATCH')
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fa-duotone fa-input-text"></i></span>
-                                <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" value="{{$client_info->name}}" placeholder="{{__('lang.client_name')}}" maxlength="40" >
+                                <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" value="{{$client_info->name}}" placeholder="{{__('lang.client_name')}}" maxlength="40" required>
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fa-duotone fa-mobile"></i></span>
-                                <input type="text" name="phone" class="form-control @if($errors->any()) is-invalid @endif" value="{{$client_info->phone}}" placeholder="{{__('lang.client_phone')}}" minlength="10" maxlength="11" >
+                                <input type="text" name="phone" class="form-control @if($errors->any()) is-invalid @endif" value="{{$client_info->phone}}" placeholder="{{__('lang.client_phone')}}" minlength="10" maxlength="10" required>
                             </div>
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-success">{{__('lang.edit_client')}}</button>
@@ -35,7 +35,7 @@
                         <form method="POST" action="{{route('add_client_car_form',$client_info->id)}}">
                             @csrf
                             <div class="input-group mb-3">
-                                <select id="car_make" class="form-select @if($errors->any()) is-invalid @endif" name="make">
+                                <select id="car_make" class="form-select @if($errors->any()) is-invalid @endif" name="make" required>
                                     <option selected disabled>{{__('lang.select_field')}}</option>
                                     @foreach($car_makes as $car_make)
                                         <option value="{{$car_make->id}}">{{$car_make->name}}</option>
@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="input-group mb-3">
-                                <select id="car_model" class="form-select @if($errors->any()) is-invalid @endif" name="model">
+                                <select id="car_model" class="form-select @if($errors->any()) is-invalid @endif" name="model" required>
                                     <option selected disabled>{{__('lang.select_field')}}</option>
                                     @foreach($car_models as $car_model)
                                         <option value="{{$car_model->id}}" data-type="{{$car_model->car_make}}">{{$car_model->name}}</option>
@@ -54,12 +54,12 @@
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fa-duotone fa-input-text"></i></span>
-                                <input type="text" name="regplate" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.reg_plate')}}" minlength="8" maxlength="8" >
+                                <input type="text" name="regplate" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.reg_plate')}}" minlength="7" maxlength="8" required>
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fa-duotone fa-input-text"></i></span>
-                                <input type="text" name="vin" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.car_vin')}}" minlength="17" maxlength="18" >
+                                <input type="text" name="vin" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.car_vin')}}" minlength="17" maxlength="17" required>
                             </div>
                             <script>
                                 $(function(){

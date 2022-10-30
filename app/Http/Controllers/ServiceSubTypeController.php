@@ -37,7 +37,6 @@ class ServiceSubTypeController extends Controller
         $this->validate($request,[
             'servicetype' => 'required',
             'name' => 'required',
-            'price' => 'required',
         ]);
 
         $service_subtype = new ServiceSubTypeModel();
@@ -48,7 +47,6 @@ class ServiceSubTypeController extends Controller
 
         $service_subtype->name = $request->name;
         $service_subtype->service_type = $request->servicetype;
-        $service_subtype->price = $request->price;
         $service_subtype->save();
 
         return redirect::back()->with('success', 'Услугата '.$service_subtype->name.' е успешно добавена.');
@@ -57,7 +55,6 @@ class ServiceSubTypeController extends Controller
     public function update($id, Request $request) {
         $this->validate($request,[
            'name' => 'required',
-           'price' => 'required'
         ]);
 
         $service_subtype = ServiceSubTypeModel::find($id);
@@ -67,7 +64,6 @@ class ServiceSubTypeController extends Controller
         }
 
         $service_subtype->name = $request->name;
-        $service_subtype->price = $request->price;
         $service_subtype->update();
 
         return redirect::back()->with('success', $service_subtype->name.' e редактиран успешно.');

@@ -36,7 +36,7 @@ class ClientInfoController extends Controller
     public function store(Request $request) {
         $this->validate($request,[
             'name' => 'required|max:40',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:10',
         ]);
 
 
@@ -57,7 +57,7 @@ class ClientInfoController extends Controller
         $this->validate($request,[
             'make' => 'required',
             'model' => 'required',
-            'regplate' => 'required|min:8|max:8',
+            'regplate' => 'required|min:7|max:8',
             'vin' => 'required|min:17|max:18',
         ]);
 
@@ -79,7 +79,7 @@ class ClientInfoController extends Controller
     public function update(Request $request,ClientInfoModel $client) {
         $this->validate($request,[
             'name' => 'required|max:40',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:10',
         ]);
 
         $client = ClientInfoModel::find($client->id);

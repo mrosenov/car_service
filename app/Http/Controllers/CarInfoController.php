@@ -53,7 +53,7 @@ class CarInfoController extends Controller
             'make' => 'required',
             'model' => 'required',
             'regplate' => 'required',
-            'vin' => 'required',
+            'vin' => 'required|min:17|max:17',
         ]);
 
         $carInfo = CarInfoModel::find($id);

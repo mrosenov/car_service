@@ -9,7 +9,7 @@
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-list"></i></span>
-                    <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.service_name')}}">
+                    <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.service_name')}}" required>
                 </div>
 
                 <div class="d-grid gap-2">

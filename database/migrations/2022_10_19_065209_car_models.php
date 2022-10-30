@@ -14,7 +14,7 @@ return new class extends Migration
 
             $table->integerIncrements('id');
             $table->string('name', 25);
-            $table->integer('car_make')->unsigned()->index();
+            $table->unsignedInteger('car_make')->index();
             $table->timestamps();
 
             $table->foreign('car_make')->references('id')->on('car_makes')->onDelete('cascade');

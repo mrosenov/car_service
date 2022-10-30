@@ -10,12 +10,12 @@
                 @method('PATCH')
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-user-helmet-safety"></i></span>
-                    <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.name_text')}}" value="{{$worker->name}}">
+                    <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.name_text')}}" value="{{$worker->name}}" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-mobile"></i></span>
-                    <input type="text" name="phone" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.phone_text')}}" maxlength="11" value="{{$worker->phone}}">
+                    <input type="text" name="phone" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.phone_text')}}" maxlength="10" value="{{$worker->phone}}" required>
                 </div>
 
                 <div class="d-grid gap-2">

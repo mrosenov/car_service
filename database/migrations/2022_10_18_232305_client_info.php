@@ -13,7 +13,7 @@ return new class extends Migration
 
             $table->integerIncrements('id');;
             $table->string('name', 40);
-            $table->string('phone',11);
+            $table->string('phone',10);
             $table->timestamps();
         });
     }

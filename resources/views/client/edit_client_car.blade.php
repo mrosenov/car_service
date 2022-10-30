@@ -53,7 +53,7 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-input-text"></i></span>
-                    <input type="text" name="vin" class="form-control @if($errors->any()) is-invalid @endif" value="{{$carinfo->vin}}" placeholder="{{__('lang.car_make_logo')}}">
+                    <input type="text" name="vin" class="form-control @if($errors->any()) is-invalid @endif" value="{{$carinfo->vin}}" placeholder="{{__('lang.car_make_logo')}}" maxlength="17">
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-success">{{__('lang.edit_car_of_client')}}</button>

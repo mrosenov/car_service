@@ -13,9 +13,9 @@ return new class extends Migration
             $table->engine = 'InnoDB';
 
             $table->integerIncrements('id');
-            $table->unsignedInteger ('ownerID')->unsigned()->index();
-            $table->unsignedInteger ('car_make')->unsigned()->index();
-            $table->unsignedInteger ('car_model')->unsigned()->index();
+            $table->unsignedInteger ('ownerID')->index();
+            $table->unsignedInteger ('car_make')->index();
+            $table->unsignedInteger ('car_model')->index();
             $table->text('reg_plate');
             $table->text('vin');
             $table->timestamps();

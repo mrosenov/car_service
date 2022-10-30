@@ -19,7 +19,6 @@
                     <tr>
                         <td>{{$service_subtype->id}}</td>
                         <td>{{$service_subtype->name}}</td>
-                        <td>{{$service_subtype->price}} лв.</td>
                         <td>
                             <a href="{{route('service_subtype_edit', $service_subtype->id)}}" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
                             <a href="{{route('service_subtype_delete',$service_subtype->id)}}" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>

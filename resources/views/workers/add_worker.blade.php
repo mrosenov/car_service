@@ -9,12 +9,12 @@
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-user-helmet-safety"></i></span>
-                    <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.name_text')}}">
+                    <input type="text" name="name" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.name_text')}}" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-duotone fa-mobile"></i></span>
-                    <input type="text" name="phone" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.phone_text')}}" maxlength="11" >
+                    <input type="text" name="phone" class="form-control @if($errors->any()) is-invalid @endif" placeholder="{{__('lang.phone_text')}}" maxlength="10" required>
                 </div>
 
                 <div class="d-grid gap-2">

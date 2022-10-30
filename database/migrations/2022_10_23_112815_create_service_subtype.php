@@ -14,8 +14,7 @@ return new class extends Migration
 
             $table->integerIncrements('id');
             $table->string('name');
-            $table->unsignedInteger('service_type')->unsigned()->index();
-            $table->float('price')->nullable();
+            $table->unsignedInteger('service_type')->index();
             $table->timestamps();
 
             $table->foreign('service_type')->references('id')->on('service_type')->onDelete('cascade');
