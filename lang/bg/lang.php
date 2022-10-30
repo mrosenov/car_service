@@ -73,4 +73,7 @@ return [
     'parts_table_service_text' => 'Извършена услуга',
     'parts_table_labour_text' => 'Труд',
     'list_repairs_totalprice_text' => 'Сума',
+    'list_of_replaced_parts' => 'Списък със сменени части на',
+    'all_repairs_price' => 'ВСИЧКИ РЕМОНТИ ЗА ТОЗИ АВТОМОБИЛ СА НА СТОЙНОСТ:',
+    'repair_price' => 'КРАЙНА СУМА ЗА ПЛАЩАНЕ:',
 ];

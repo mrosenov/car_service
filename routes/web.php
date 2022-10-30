@@ -80,6 +80,7 @@ Route::get('service/subtype/{subtype:id}/delete', [ServiceSubTypeController::cla
 //Repairs
 Route::get('repairs', [RepairInfoController::class, 'list_repairs_view'])->name('list_of_repairs');
 Route::get('repair/add', [RepairInfoController::class, 'add_repair_view'])->name('add_repair');
+Route::get('repair/{repair:id}', [RepairInfoController::class, 'view_repair'])->name('view_repair');
 //Methods
 Route::post('repair/add', [RepairInfoController::class, 'store'])->name('add_repair_form');
 

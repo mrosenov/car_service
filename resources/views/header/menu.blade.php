@@ -57,7 +57,7 @@
                 </li>
                 {{--Repairs--}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{Route::currentRouteNamed(['list_of_repairs']) ?  'active' : ''}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle {{Route::currentRouteNamed(['add_repair','list_of_repairs']) ?  'active' : ''}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{__('lang.navbar_repairs')}}
                     </a>
                     <ul class="dropdown-menu">

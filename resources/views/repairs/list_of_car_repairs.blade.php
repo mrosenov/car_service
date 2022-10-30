@@ -27,10 +27,16 @@
                         </td>
                         <td>
                             <a href="" class="btn btn-light"><i class="fa-duotone fa-pen-to-square"></i></a>
+                            <a href="{{route('view_repair', $repair->id)}}" class="btn btn-light"><i class="fa-duotone fa-clipboard-list"></i></a>
                             <a href="" class="btn btn-light"><i class="fa-duotone fa-trash"></i></a>
                         </td>
                     </tr>
                 @endforeach
+                <tr>
+                    <td colspan="5">
+                        <strong>{{__('lang.all_repairs_price')}} {{$AllCarRepairsPrice}} лв</strong>
+                    </td>
+                </tr>
                 </tbody>
             </table>
             </p>

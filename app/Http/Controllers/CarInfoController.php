@@ -40,11 +40,19 @@ class CarInfoController extends Controller
     }
 
     public function car_repairs_view($id,RepairInfoModel $rinfo) {
+        $repair_info = $rinfo->where('car_info_id', $id)->get()->first();
         $list_repairs = $rinfo->where('car_info_id', $id)->get();
 
         return view('repairs/list_of_car_repairs', [
+            'repair_info' => $repair_info,
             'list_repairs' => $list_repairs,
+            'AllCarRepairsPrice' => $this->AllCarRepairsTotalPrice($id),
         ]);
+    }
+
+    public function AllCarRepairsTotalPrice($id) {
+        $carRepairsTotalPrice = DB::table('repair_info')->where('car_info_id', $id)->sum(DB::raw('totalPrice'));
+        return $carRepairsTotalPrice;
     }
 
     public function update($id,Request $request) {

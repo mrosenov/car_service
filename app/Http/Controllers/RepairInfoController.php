@@ -11,8 +11,7 @@ use App\Models\WorkerInfoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-use Symfony\Component\Console\Input\Input;
-use function GuzzleHttp\Promise\all;
+
 
 class RepairInfoController extends Controller
 {
@@ -30,6 +29,16 @@ class RepairInfoController extends Controller
             'workers' => $workers::all(),
             'service_types' => $service_types::all(),
             'service_subtypes' => $service_subtypes::all(),
+        ]);
+    }
+
+    public function view_repair($id, RepairInfoModel $rinfo) {
+        $repair_info = $rinfo::find($id);
+        $replaced_parts = $rinfo::find($id)->ReplacedParts;
+
+        return view('repairs/view_repair', [
+            'repair_info' => $repair_info,
+            'replaced_parts' => $replaced_parts,
         ]);
     }
 
@@ -60,9 +69,15 @@ class RepairInfoController extends Controller
                 'labourPrice' => $request->labourprice[$i],
             ]);
         }
-        $totalPrice = DB::table('replaced_parts_info')->where('repair_info', $rinfo->id)->sum(DB::raw('partPrice + labourPrice'));
-        $rinfo->totalPrice = $totalPrice;
+//        $totalPrice = DB::table('replaced_parts_info')->where('repair_info', $rinfo->id)->sum(DB::raw('partPrice + labourPrice'));
+        $rinfo->totalPrice = $this->ReplacedPartsPrice($rinfo->id);
         $rinfo->update();
         return redirect::back()->with('success', 'Ремонтът е добавен успешно.');
+    }
+
+    public function ReplacedPartsPrice($id) {
+        $ReplacedPartsPrice = DB::table('replaced_parts_info')->where('repair_info', $id)->sum(DB::raw('partPrice + labourPrice'));
+
+        return $ReplacedPartsPrice;
     }
 }
