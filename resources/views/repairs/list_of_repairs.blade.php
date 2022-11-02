@@ -16,7 +16,6 @@
                     <th scope="col">{{__('lang.parts_table_partprice_text')}}</th>
                     <th scope="col">{{__('lang.parts_table_service_text')}}</th>
                     <th scope="col">{{__('lang.parts_table_labour_text')}}</th>
-                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,11 +29,6 @@
                             <td>{{$part->partPrice}} ЛВ</td>
                             <td>{{$part->ServiceType->name}}</td>
                             <td>{{$part->labourPrice}} ЛВ</td>
-                            <td>
-                                <a href="" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-screwdriver-wrench"></i></a>
-                                <a href="" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-pen-to-square"></i></a>
-                                <a href="" class="btn btn-light btn-outline-secondary"><i class="fa-duotone fa-trash"></i></a>
-                            </td>
                         </tr>
                     @endforeach
                 </tbody>
